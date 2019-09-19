@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Rock-Paper-Scissors?</title>
+  <script src='script.js' defer></script>
+
+  <style>
+    .resultSection {
+      padding-top: 30px;
+    }
+
+    .hideWinner {
+      display: none;
+    }
+
+    .showWinner {
+      display: inline-block;
+      color: red;
+      font-weight: bold;
+    }
+
+    .count {
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Rock-paper-scissors</h1>
+
+  <p> Select an option: </p>
+  <input type="radio" id="rock" name="options" value="rock"> <label for="rock">Rock</label>
+  <input type="radio" id="paper" name="options" value="paper"> <label for="paper">Paper</label>
+  <input type="radio" id="scissors" name="options" value="scissors"> <label for="scissors">Scissors</label>
+
+  <div class="resultSection">
+    <strong>Winner: </strong> <span class='hideWinner'>User</span> <span class='hideWinner'>System</span> <span
+      class='hideWinner'>Tie</span>
+    <div class='count'>
+      <span>User Win Count:</span><span id='userWinCount'></span>
+    </div>
+    <div class='count'>
+      <span>System Win Count:</span><span id='systemWinCount'></span>
+    </div>
+    <div class='count'>
+      <span>Tie Count:</span><span id='tieCount'></span>
+    </div>
+    <div>
+      <button id='resetButton'>
+        Reset Counts
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>
