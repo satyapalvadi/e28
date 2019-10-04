@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<hmtl>
+
+    <head>
+        <title>Rock-Paper-Scissors</title>
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+        <script src="js/script.js" defer></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <h1>Rock-paper-scissors</h1>
+
+            <p> Select an option: </p>
+            <input type="radio" id="rock" name="options" value="rock" v-on:change="handleRadio" v-model="selectedOption"> <label for="rock">Rock</label>
+            <input type="radio" id="paper" name="options" value="paper" v-on:change="handleRadio" v-model="selectedOption"> <label for="paper">Paper</label>
+            <input type="radio" id="scissors" name="options" value="scissors" v-on:change="handleRadio" v-model="selectedOption"> <label for="scissors">Scissors</label>
+
+            <div v-cloak v-if='winner' class="resultSection">
+                <div class="winner">Winner: {{ winner }} </div>
+
+                <div class='count'>
+                    <span>User Win Count: {{ userWinCount }}</span>
+                </div>
+                <div class='count'>
+                    <span>System Win Count: {{ systemWinCount }}</span>
+                </div>
+                <div class='count'>
+                    <span>Tie Count:{{ tieCount }} </span>
+                </div>
+                <div>
+                    <button id='resetButton' v-on:click='handleResetButton'>
+                        Reset Game
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</hmtl>

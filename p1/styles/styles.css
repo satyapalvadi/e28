@@ -1,0 +1,17 @@
+.resultSection{
+    padding-top: 30px;
+}
+   
+.count{
+    padding: 10px;
+}
+
+[v-cloak]{
+    display: none;
+}
+
+.winner{
+    color: green;
+    font-weight: bold;
+    font-size: 2rem;
+}
