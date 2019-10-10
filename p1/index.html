@@ -1,42 +1,50 @@
 <!DOCTYPE html>
+<html lang='en'>
 
-<hmtl>
+<html>
 
-    <head>
-        <title>Rock-Paper-Scissors</title>
-        <link rel="stylesheet" type="text/css" href="styles/styles.css">
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
-        <script src="js/script.js" defer></script>
-    </head>
+<head>
+    <title>Rock-Paper-Scissors</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
 
-    <body>
-        <div id="app">
-            <h1>Rock-paper-scissors</h1>
+<body>
+    <div id="app">
+        <h1>Rock-paper-scissors</h1>
 
+        <!-- user input section -->
+        <section>
             <p> Select an option: </p>
-            <input type="radio" id="rock" name="options" value="rock" v-on:change="handleRadio" v-model="selectedOption"> <label for="rock">Rock</label>
-            <input type="radio" id="paper" name="options" value="paper" v-on:change="handleRadio" v-model="selectedOption"> <label for="paper">Paper</label>
-            <input type="radio" id="scissors" name="options" value="scissors" v-on:change="handleRadio" v-model="selectedOption"> <label for="scissors">Scissors</label>
+            <input type="radio" id="rock" name="options" value="rock" v-on:change="handleRadio"
+                v-model="selectedOption"> <label for="rock">Rock</label>
+            <input type="radio" id="paper" name="options" value="paper" v-on:change="handleRadio"
+                v-model="selectedOption"> <label for="paper">Paper</label>
+            <input type="radio" id="scissors" name="options" value="scissors" v-on:change="handleRadio"
+                v-model="selectedOption"> <label for="scissors">Scissors</label>
+        </section>
 
-            <div v-cloak v-if='winner' class="resultSection">
-                <div class="winner">Winner: {{ winner }} </div>
-
-                <div class='count'>
-                    <span>User Win Count: {{ userWinCount }}</span>
-                </div>
-                <div class='count'>
-                    <span>System Win Count: {{ systemWinCount }}</span>
-                </div>
-                <div class='count'>
-                    <span>Tie Count:{{ tieCount }} </span>
-                </div>
-                <div>
-                    <button id='resetButton' v-on:click='handleResetButton'>
-                        Reset Game
-                    </button>
-                </div>
+        <!-- results section -->
+        <section v-cloak v-if='winner' class="resultSection">
+            <div class="winner">Winner: {{ winner }} </div>
+            <div class='count'>
+                <span>User Win Count: {{ userWinCount }}</span>
             </div>
-        </div>
+            <div class='count'>
+                <span>System Win Count: {{ systemWinCount }}</span>
+            </div>
+            <div class='count'>
+                <span>Tie Count:{{ tieCount }} </span>
+            </div>
+            <div>
+                <button id='resetButton' v-on:click='handleResetButton'>
+                    Reset Game
+                </button>
+            </div>
+        </section>
+    </div>
+</body>
 
-    </body>
-</hmtl>
+</html>

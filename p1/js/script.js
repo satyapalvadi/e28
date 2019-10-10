@@ -11,6 +11,7 @@ let app = new Vue({
     },
 
     methods: {
+        //event handler for radio buttons
         handleRadio() {
             let systemOption = this.options[this.getRandomInt(3)];
             let userOption = this.selectedOption;
@@ -26,6 +27,7 @@ let app = new Vue({
             winnerOption == 'tie' ? this.tieCount++ : userOption == winnerOption ? this.userWinCount++ : this.systemWinCount++;
         },
 
+        //function to check the winner
         checkWinner(userOption, systemOption) {
             if (userOption == 'rock' && systemOption == 'scissors') {
                 return userOption;
@@ -50,10 +52,12 @@ let app = new Vue({
             }
         },
 
+        //generate a random number
         getRandomInt(max) {
             return Math.floor(Math.random() * Math.floor(max));
         },
 
+        //event handler for the reset button
         handleResetButton() {
             this.systemWinCount = 0;
             this.userWinCount = 0;
