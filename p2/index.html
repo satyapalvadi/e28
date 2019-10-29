@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<html>
+
+<head>
+    <title>Rock-Paper-Scissors</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Rock-paper-scissors</h1>
+        <input-component :options="options" @winner-selected="winnerSelected($event)"></input-component>
+        <section id="output" v-cloak v-if='winner' class="resultSection">
+            <results-component :winner="winner" @handle-reset-button="handleResetButton" :tie-count="tieCount" :user-win-count="userWinCount"
+                :system-win-count="systemWinCount"></results-component>
+        </section>
+    </div>
+</body>
+
+</html>
