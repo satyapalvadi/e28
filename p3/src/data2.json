@@ -1,0 +1,131 @@
+{
+	"expenses": [
+	{
+		"id": "e0001",
+		"type": "",
+		"description": "",
+		"amount": "570",
+		"date": "10-NOV-2019",
+		"paidBy": "p1",
+		"split":"yes",
+		"splitters":[
+			{
+				"pid": "p1",
+				"splitType": "percent",
+				"split": "40"
+			},
+			{
+				"pid": "p2",
+				"splitType": "percent",
+				"split": "30"
+			},
+						{
+				"pid": "p3",
+				"splitType": "percent",
+				"split": "30"
+			}
+		]
+	},
+	{
+		"id": "e0002",
+		"type": "",
+		"description": "",
+		"amount": "50",
+		"date": "15-NOV-2019",
+		"paidBy": "p2",
+		"split":"yes",
+		"splitters":[
+			{
+				"pid": "p1",
+				"splitType": "percent",
+				"split": "40"
+			},
+			{
+				"pid": "p2",
+				"splitType": "percent",
+				"split": "60"
+			}
+		]
+	},
+	{
+		"id": "e0003",
+		"type": "",
+		"description": "",
+		"amount": "200",
+		"date": "19-NOV-2019",
+		"paidBy": "p3",
+		"split":"yes",
+		"splitters":[
+			{
+				"pid": "p3",
+				"splitType": "percent",
+				"split": "20"
+			},
+			{
+				"pid": "p2",
+				"splitType": "percent",
+				"split": "80"
+			}
+		]
+	}
+],
+
+"persons":[
+	{
+		"id":"p1",
+		"name":"Satya",
+		"email":"",
+		"mobile":""
+	},
+	{
+		"id":"p2",
+		"name":"Sushma",
+		"email":"",
+		"mobile":""
+	},
+	{
+		"id":"p3",
+		"name":"Aneesh",
+		"email":"",
+		"mobile":""
+	}
+],
+
+"groups":[
+	{
+		"id": "g1",
+		"name": "Work",
+		"type": "",
+		"members": ["p1", "p2"]
+	}
+],
+
+"runExpensesFor": 
+{ 
+	"id": "p1"
+}
+
+"personResponsibilities":
+[
+	{
+		"id": "p1",
+		"outOfPocket":"500",
+		"shareOfExpenses":"300",
+		"receive":"200",
+		"hasToPay":"0"
+	},
+	{
+		"id": "p2",
+		"outOfPocket":"100",
+		"shareOfExpenses":"300",
+		"receive":"0",
+		"hasToPay":"200"
+	}
+
+
+]
+
+
+
+
+}
