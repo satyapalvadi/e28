@@ -3,7 +3,7 @@
 	{
 		"id": "e0001",
 		"type": "",
-		"description": "",
+		"description": "Shopping at the Mall",
 		"amount": "570",
 		"date": "10-NOV-2019",
 		"paidBy": "p1",
@@ -29,7 +29,7 @@
 	{
 		"id": "e0002",
 		"type": "",
-		"description": "",
+		"description": "Dinner at Legal Seafoods",
 		"amount": "50",
 		"date": "15-NOV-2019",
 		"paidBy": "p2",
@@ -50,21 +50,73 @@
 	{
 		"id": "e0003",
 		"type": "",
-		"description": "",
-		"amount": "200",
-		"date": "19-NOV-2019",
+		"description": "Uber to the movies",
+		"amount": "50",
+		"date": "24-NOV-2019",
 		"paidBy": "p3",
 		"split":"yes",
 		"splitters":[
 			{
 				"pid": "p3",
 				"splitType": "percent",
-				"split": "20"
+				"split": "50"
 			},
 			{
 				"pid": "p2",
 				"splitType": "percent",
-				"split": "80"
+				"split": "50"
+			}
+		]
+	},
+	{
+		"id": "e0004",
+		"type": "",
+		"description": "Movie tkts to Frozen2",
+		"amount": "100",
+		"date": "24-NOV-2019",
+		"paidBy": "p3",
+		"split":"yes",
+		"splitters":[
+			{
+				"pid": "p1",
+				"splitType": "percent",
+				"split": "33"
+			},
+			{
+				"pid": "p2",
+				"splitType": "percent",
+				"split": "33"
+			},
+			{
+				"pid": "p3",
+				"splitType": "percent",
+				"split": "34"
+			}
+		]
+	},
+	{
+		"id": "e0005",
+		"type": "",
+		"description": "Rent payment for November",
+		"amount": "2000",
+		"date": "01-DEC-2019",
+		"paidBy": "p1",
+		"split":"yes",
+		"splitters":[
+			{
+				"pid": "p1",
+				"splitType": "percent",
+				"split": "33"
+			},
+			{
+				"pid": "p2",
+				"splitType": "percent",
+				"split": "33"
+			},
+			{
+				"pid": "p3",
+				"splitType": "percent",
+				"split": "34"
 			}
 		]
 	}
@@ -74,20 +126,20 @@
 	{
 		"id":"p1",
 		"name":"Satya",
-		"email":"",
-		"mobile":""
+		"email":"blah1@gmail.com",
+		"phone":"123-123-1234"
 	},
 	{
 		"id":"p2",
 		"name":"Sushma",
-		"email":"",
-		"mobile":""
+		"email":"blah2@gmail.com",
+		"phone":"456-456-4567"
 	},
 	{
 		"id":"p3",
 		"name":"Aneesh",
-		"email":"",
-		"mobile":""
+		"email":"blah3@gmail.com",
+		"phone":"789-789-7890"
 	}
 ],
 
@@ -103,29 +155,30 @@
 "runExpensesFor": 
 { 
 	"id": "p1"
-}
+},
 
 "personResponsibilities":
 [
 	{
 		"id": "p1",
-		"outOfPocket":"500",
-		"shareOfExpenses":"300",
-		"receive":"200",
+		"outOfPocket":"2570",
+		"shareOfExpenses":"941",
+		"receive":"1500",
 		"hasToPay":"0"
 	},
 	{
 		"id": "p2",
-		"outOfPocket":"100",
-		"shareOfExpenses":"300",
+		"outOfPocket":"50",
+		"shareOfExpenses":"919",
 		"receive":"0",
-		"hasToPay":"200"
+		"hasToPay":"869"
+	},	
+	{
+		"id": "p3",
+		"outOfPocket":"300",
+		"shareOfExpenses":"910",
+		"receive":"0",
+		"hasToPay":"610"
 	}
-
-
 ]
-
-
-
-
 }

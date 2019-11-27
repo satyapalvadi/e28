@@ -1,24 +1,9 @@
-# expenser
+# Project 3
++ By: Satya Palvadi
++ Production URL: <http://p3.satyap2.tech/>
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Outline of features
+* App to track expenses between people
+* All data is coming from a data file.
+* In the home page, the "Pay In Full" button saves the info about the person who paid in local storage.
