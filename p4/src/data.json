@@ -1,0 +1,53 @@
+
+expenses: [
+	{
+		id: 'e0001',
+		type: '',
+		description: '',
+		amount: '20.00',
+		date: '12-NOV-2019',
+		pid: 'personId',
+		split:'yes',
+		splitters:[
+			{
+				spid: 'personId',
+				splitType: 'percent | dollars',
+				splitPercent: '50'
+			},
+			{
+				spid: 'personId',
+				splitType: 'percent | dollars',
+				splitPercent: '50'
+			}
+		]
+	},
+
+],
+
+persons:[
+	{
+		id:'p1',
+		name:'Satya',
+		email:'',
+		mobile:''
+	}
+
+],
+
+groups:[
+	{
+		id: 'g1',
+		name: 'Work group',
+		type:''
+	}
+
+],
+
+runExpensesFor: 
+{ 
+	id: 'p1'
+}
+
+
+
+
