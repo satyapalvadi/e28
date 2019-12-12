@@ -1,6 +1,6 @@
 <template>
     <div class="block">
-        <div class="line-item"><span class="sub-hdg">Name: </span> {{ friend.name}} </div>
+        <div data-test="name" class="line-item"><span class="sub-hdg">Name: </span> {{ friend.name}} </div>
         <div class="line-item"><span class="sub-hdg">Phone: </span> {{friend.phone}} </div>
         <div class="line-item"><span class="sub-hdg">Email: </span> {{friend.email}} </div>
     </div>

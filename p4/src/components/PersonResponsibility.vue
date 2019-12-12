@@ -5,13 +5,13 @@
     <div data-test="spent" class="line-item"> <span class="sub-hdg">Spent: </span> {{ '$' + resp.outOfPocket }} </div>
     <div data-test="expenses" class="line-item"> <span class="sub-hdg">Expenses: </span> {{ '$' + resp.shareOfExpenses }} </div>
     <div data-test="receiveMoney" class="line-item receive-money" v-if="resp.receive > 0"> <span class="sub-hdg"> Will Receive: </span> {{ '$' + resp.receive }} </div>
-    <div data-test="paidStatus" class="line-item pay-money" v-if="!paidStatus">
+    <div :id=resp.id data-test="paid-status" class="line-item pay-money" v-if="!paidStatus">
         <div v-if="resp.hasToPay > 0"> <span class="sub-hdg"> Has to Pay: </span> {{ '$' + resp.hasToPay }} </div>
         <button class="pay-button" v-if="resp.hasToPay > 0" @click="$emit('handle-pay-now', resp.id)">Pay In Full</button>
-        <div class="paid-clicked" v-if="resp.showPaidText">Paid!!!!</div>
+        <div data-test="paid-clicked" class="paid-clicked" v-if="resp.showPaidText">Paid!!!!</div>
     </div>
     
-    <div data-test="paidMoneyDate" class="receive-money" v-if="paidStatus && paidDate != ''">
+    <div :id= resp.id data-test="paid-money-date" class="receive-money" v-if="paidStatus && paidDate != ''">
         <span class="sub-hdg">Paid on: </span> {{ paidDate }}
     </div>
     <br>

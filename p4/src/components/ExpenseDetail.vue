@@ -1,6 +1,6 @@
 <template>
     <div class="block">
-        <div class="line-item"><span class="sub-hdg">Description: </span> {{expense.description}}</div>
+        <div data-test="expense-description" class="line-item"><span class="sub-hdg">Description: </span> {{expense.description}}</div>
         <div class="line-item"><span class="sub-hdg">Date: </span>{{expense.date}}</div>
         <div class="line-item"><span class="sub-hdg">Amount: </span>${{expense.amount}}</div>
         <div class="line-item"><span class="sub-hdg">Paid by: </span> {{expense.paidBy}}</div>
