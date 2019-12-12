@@ -12,39 +12,43 @@ export default new Vuex.Store({
         expenses: null
     },
 
-    mutations:{
+    mutations: {
         setPersonResponsibilities(state, payload) {
             state.personResponsibilities = payload;
         },
         setFriends(state, payload) {
             state.friends = payload;
         },
-        setExpenses(state, payload){
+        setExpenses(state, payload) {
             state.expenses = payload;
         }
     },
 
-    actions:{
-        setPersonResponsibilities(context){
-            axios.get("https://my-json-server.typicode.com/satyapalvadi/e28-expenser-api2/personResponsibilities").then(response => {
-                context.commit('setPersonResponsibilities', response.data);
+    actions: {
+        //chain the 2 api calls needed for data in the homepage
+        setData(context) {
+            axios.get("https://my-json-server.typicode.com/satyapalvadi/e28-expenser-api2/persons").then(response => {
+                context.commit('setFriends', response.data);
+                axios.get("https://my-json-server.typicode.com/satyapalvadi/e28-expenser-api2/personResponsibilities").then(response => {
+                    context.commit('setPersonResponsibilities', response.data);
+                });
             });
         },
 
-        setFriends(context){
+        setFriends(context) {
             axios.get("https://my-json-server.typicode.com/satyapalvadi/e28-expenser-api2/persons").then(response => {
                 context.commit('setFriends', response.data);
             });
         },
 
-        setExpenses(context){
+        setExpenses(context) {
             axios.get("https://my-json-server.typicode.com/satyapalvadi/e28-expenser-api2/expenses").then(response => {
                 context.commit('setExpenses', response.data);
             });
         }
     },
 
-    getters:{
+    getters: {
 
     }
 })

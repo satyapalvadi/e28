@@ -16,9 +16,7 @@ export default {
   name: "HomePage",
 
   data: function() {
-    return {
-      
-    };
+    return {};
   },
 
   components: { PersonResponsibility },
@@ -26,10 +24,12 @@ export default {
   methods: {
     //function to get person names from a different state variable
     showData: function() {
-      this.personResponsibilities.forEach(resp => {
-        let name = this.findFriendName(resp.id);
-        resp.personName = name;
-      });
+      if (this.personResponsibilities != null) {
+        this.personResponsibilities.forEach(resp => {
+          let name = this.findFriendName(resp.id);
+          resp.personName = name;
+        });
+      }
     },
 
     findFriendName: function(id) {
@@ -68,23 +68,19 @@ export default {
     }
   },
 
-
   mounted: function() {
-    //Make all required API calls
-    this.$store.dispatch("setPersonResponsibilities");
-    this.$store.dispatch("setFriends");
-    this.$store.dispatch("setExpenses");
+    //Make all required API call to get data from the homepage
+    this.$store.dispatch("setData");
   },
 
-  watch:{
+  watch: {
     //watching a state variable to massage data from 2 different api calls
-    personResponsibilities: function(newValue /*, oldValue*/){
-      if(newValue != null){
+    personResponsibilities: function(newValue /*, oldValue*/) {
+      if (newValue != null) {
         this.showData();
       }
     }
   }
-
 };
 </script>
 
