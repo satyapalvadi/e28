@@ -11,22 +11,22 @@
 No
 
 ### Were there any parts of the interface that you found confusing or unclear?
-When I first looked at the App, it was little confusing regarding the purpose of the App. Once I read the "About" section in the "Tips" 
++ When I first looked at the App, it was little confusing regarding the purpose of the App. Once I read the "About" section in the "Tips" 
 sidebar, the purpose of the App is clear. May be, consider adding the "About" section in a more prominent way in the App? 
 Really liked the idea.
 
-Once we load the demo, there is no real easy way to start a graph from scratch as there is no way to delete levels or nodes.
++ Once we load the demo, there is no real easy way to start a graph from scratch as there is no way to delete levels or nodes.
 
-Refreshing the app doesn't work unless present at the root URL
++ Refreshing the app doesn't work unless present at the root URL
 
 ### Are there aspects of the code that you feel were not self-evident and would benefit from comments?
-Yes, I felt the code needs some comments as the App is a bit complicated.
++ Yes, I felt the code needs some comments as the App is a bit complicated.
 
 ### Are there any parts of the code that you found interesting or taught you something new?
-Using material design
++ Using material design
 
 ### Are there any best practices discussed in course material that you feel were not addressed in the code?
-
++ Didn't find any deviations from the course material
 
 ### Do you have any additional comments not covered in the above questions?
-For P4, please consider adding delete options for levels and nodes. 
++ For P4, please consider adding delete options for levels and nodes. 
