@@ -18,15 +18,11 @@ describe('Expenser', () => {
   it('Click the pay now button and verify text', () => {
     cy.visit('/')
     cy.get("[data-test='paid-status']#p2 > button").click();
-    cy.get("[data-test='paid-status']#p2 > [data-test='paid-clicked']").contains("Paid!!!")
+    cy.get("[data-test='paid-status']#p2 > [data-test='paid-clicked']").contains("Paid!!!");
+    cy.visit('/expenses')
+    cy.visit('/')
+    cy.get("[data-test='paid-money-date']#p2").contains("2019")
   }),
-
-    //Navigate to a different page and in the home page should show the date
-    it('verifies the paid date', () => {
-      cy.visit('/friends')
-      cy.visit('/')
-      cy.get("[data-test='paid-money-date']#p2").contains("2019")
-    })
 
   //navigate to expenses page and verify the count of expenses
   it('Visits the Expenses page', () => {

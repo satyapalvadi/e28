@@ -27,22 +27,24 @@ export default new Vuex.Store({
     actions: {
         //chain the 2 api calls needed for data in the homepage
         setData(context) {
-            axios.get("https://my-json-server.typicode.com/satyapalvadi/e28-expenser-api2/persons").then(response => {
+            axios.get("https://e28-expenser.firebaseio.com/persons.json").then(response => {
                 context.commit('setFriends', response.data);
-                axios.get("https://my-json-server.typicode.com/satyapalvadi/e28-expenser-api2/personResponsibilities").then(response => {
+                axios.get("https://e28-expenser.firebaseio.com/personResponsibilities.json").then(response => {
                     context.commit('setPersonResponsibilities', response.data);
                 });
             });
         },
 
         setFriends(context) {
-            axios.get("https://my-json-server.typicode.com/satyapalvadi/e28-expenser-api2/persons").then(response => {
+            //axios.get("https://my-json-server.typicode.com/satyapalvadi/e28-expenser-api2/persons").then(response => {
+                axios.get("https://e28-expenser.firebaseio.com/persons.json").then(response => {                
                 context.commit('setFriends', response.data);
             });
         },
 
         setExpenses(context) {
-            axios.get("https://my-json-server.typicode.com/satyapalvadi/e28-expenser-api2/expenses").then(response => {
+            //axios.get("https://my-json-server.typicode.com/satyapalvadi/e28-expenser-api2/expenses").then(response => {
+            axios.get("https://e28-expenser.firebaseio.com/expenses.json").then(response => {
                 context.commit('setExpenses', response.data);
             });
         }
