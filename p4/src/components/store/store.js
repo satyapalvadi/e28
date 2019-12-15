@@ -36,14 +36,12 @@ export default new Vuex.Store({
         },
 
         setFriends(context) {
-            //axios.get("https://my-json-server.typicode.com/satyapalvadi/e28-expenser-api2/persons").then(response => {
-                axios.get("https://e28-expenser.firebaseio.com/persons.json").then(response => {                
+            axios.get("https://e28-expenser.firebaseio.com/persons.json").then(response => {
                 context.commit('setFriends', response.data);
             });
         },
 
         setExpenses(context) {
-            //axios.get("https://my-json-server.typicode.com/satyapalvadi/e28-expenser-api2/expenses").then(response => {
             axios.get("https://e28-expenser.firebaseio.com/expenses.json").then(response => {
                 context.commit('setExpenses', response.data);
             });

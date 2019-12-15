@@ -19,7 +19,7 @@ export default {
   components: {},
   data: function() {
     return {
-      links: ["home", "expenses", "friends"]
+      links: ["home", "expenses", "friends", "add"]
     };
   }
 };
