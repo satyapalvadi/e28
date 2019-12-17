@@ -8,6 +8,10 @@ import CreateExpense from './components/pages/CreateExpense.vue';
 import store from './components/store/store';
 import Vuelidate from 'vuelidate';
 
+/* eslint-disable no-unused-vars */
+const _ = require('lodash');
+/* eslint-enable no-unused-vars */
+
 Vue.use(VueRouter);
 Vue.use(Vuelidate);
 

@@ -22,9 +22,9 @@ export default new Vuex.Store({
         setExpenses(state, payload) {
             state.expenses = payload;
         },
-        // addExpense(state, payload){
-        //     state.ex
-        // }
+        addExpense(state, payload){
+            _.merge(state.expenses, payload);
+        }
     },
 
     actions: {
@@ -51,7 +51,11 @@ export default new Vuex.Store({
         }
     },
 
-    getters: {
-
+    getters:{
+        getNextExpenseId(state){
+            let expenseIds = _.map(state.expenses, "id");
+            let expenseIdNums = _.sortBy(_.map(expenseIds, (n) => Number(n) ));
+            return expenseIdNums[expenseIdNums.length - 1] + 1;
+        }
     }
 })
