@@ -54,7 +54,9 @@ export default new Vuex.Store({
     getters:{
         getNextExpenseId(state){
             let expenseIds = _.map(state.expenses, "id");
+            console.log(expenseIds);
             let expenseIdNums = _.sortBy(_.map(expenseIds, (n) => Number(n) ));
+            console.log(expenseIdNums);
             return expenseIdNums[expenseIdNums.length - 1] + 1;
         }
     }
