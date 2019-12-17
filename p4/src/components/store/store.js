@@ -21,7 +21,10 @@ export default new Vuex.Store({
         },
         setExpenses(state, payload) {
             state.expenses = payload;
-        }
+        },
+        // addExpense(state, payload){
+        //     state.ex
+        // }
     },
 
     actions: {

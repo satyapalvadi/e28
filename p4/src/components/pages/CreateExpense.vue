@@ -4,12 +4,12 @@
 
     <form @submit.prevent="handleSubmit">
       <div class="form-group">
-        <label for="name">Description</label>
+        <label for="description">description</label>
         <input
           type="text"
           :class="{ 'form-input-error': $v.expense.description.$error }"
           id="description"
-          data-test="expense-description-input"
+          data-test="form-description-input"
           v-model="$v.expense.description.$model"
         />
         <div v-if="$v.expense.description.$error">
@@ -21,7 +21,7 @@
       </div>
 
       <div class="form-group">
-        <label for="name">Expense Amount</label>
+        <label for="amount">Expense Amount</label>
         <input
           type="number"
           :class="{ 'form-input-error': $v.expense.amount.$error }"
@@ -38,6 +38,21 @@
       </div>
 
       <div class="form-group">
+        <label for="paidBy">Paid By</label>
+        <input
+          type="text"
+          :class="{ 'form-input-error': $v.expense.paidBy.$error }"
+          data-test="expense-paidBy-input"
+          id="paidBy"
+          v-model="$v.expense.paidBy.$model"
+        />
+
+        <div v-if="$v.expense.paidBy.$error">
+          <div class="form-feedback-error" v-if="!$v.expense.paidBy.required">Paid By is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
         <label for="date">Date</label>
         <input type="date" data-test="expense-date" id="expense-date" v-model="expense.date" />
       </div>
@@ -46,11 +61,11 @@
         <label for="splitters">Splitters</label>
         <input
           type="text"
-          id="Splitters"
+          id="splitters"
           data-test="expense-splitters-input"
-          v-model="expense.splitters"
+          v-model="frmSplitters"
         />
-        <small id="categoriesHelp" class="form-help">Comma separated e.g. p1-40, p2-60</small>
+        <small id="splittersHelp" class="form-help">Comma separated e.g. p1-40, p2-60</small>
       </div>
 
       <button data-test="add-expense-button" type="submit">Add Expense</button>
@@ -70,7 +85,7 @@ expense = {
   date: "",
   paidBy: "",
   split: "",
-  splitters: []
+  splitters: ""
 };
 
 const axios = require("axios");
@@ -80,7 +95,8 @@ export default {
   data: function() {
     return {
       expense: expense,
-      formHasErrors: false
+      formHasErrors: false,
+      frmSplitters: ""
     };
   },
   validations: {
@@ -94,6 +110,9 @@ export default {
       },
       amount: {
         required
+      },
+      paidBy: {
+        required
       }
     }
   },
@@ -105,6 +124,22 @@ export default {
   methods: {
     handleSubmit: function() {
       if (!this.formHasErrors) {
+        if (this.frmSplitters) {
+          var splitterArray = [];
+          var lsplitters = this.frmSplitters.split(",");
+          lsplitters.forEach(splitter => {
+            var person = splitter.split("-")[0];
+            var percent = splitter.split("-")[1];
+            splitterArray.push({
+              pid: person,
+              split: percent,
+              splitType: "percent"
+            });
+          });
+          expense.splitters = splitterArray;
+          expense.split = "yes";
+        }
+
         axios
           .post(
             "https://e28-expenser.firebaseio.com/expenses.json",
@@ -116,8 +151,16 @@ export default {
             // this.$store.commit('addProduct', {
             //     [key]: this.product
             // });
+            expense = {
+              description: "",
+              amount: "",
+              date: "",
+              paidBy: "",
+              split: "",
+              splitters: ""
+            };
             this.$router.push({
-                name: 'expenses',
+              name: "expenses"
             });
           });
       }
@@ -127,7 +170,4 @@ export default {
 </script>
 
 <style scoped>
-#description {
-  height: 150px;
-}
 </style>
