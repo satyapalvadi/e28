@@ -14,6 +14,7 @@ const _ = require('lodash');
 
 Vue.use(VueRouter);
 Vue.use(Vuelidate);
+Vue.config.productionTip = false
 
 const routes = [
   {path:'/', component: HomePage, name:'home'},
