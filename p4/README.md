@@ -1,24 +1,9 @@
-# p4
+# Project 4
++ By: Satya Palvadi
++ Production URL: https://p4.satyap2.tech/
 
-## Project setup
-```
-npm install
-```
+## Improvements based on P3 peer review feedback
+* There are a couple of item mentioned in the feedback. But, I couldn't get to them because of other commitments
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Outside resources
+* Class Notes & Vue documentation
