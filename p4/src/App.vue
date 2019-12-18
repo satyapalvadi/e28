@@ -4,7 +4,7 @@
     <nav>
       <ul>
         <li v-for="link in links" :key="link">
-          <router-link exact :to="{ name: link }">{{ link }}</router-link>
+          <router-link exact :id="link" :to="{ name: link }">{{ link }}</router-link>
         </li>
       </ul>
     </nav>

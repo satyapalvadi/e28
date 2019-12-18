@@ -24,15 +24,15 @@ describe('Expenser', () => {
     cy.get("[data-test='paid-money-date']#p2").contains("2019")
   }),
 
-  //navigate to expenses page and verify the count of expenses
-  it('Visits the Expenses page', () => {
-    cy.visit('/expenses');
-    cy.get("[data-test='expense-description']").its('length').should('be.gte', 5);
-  })
+    //navigate to expenses page and verify the count of expenses
+    it('Visits the Expenses page', () => {
+      cy.get('#expenses').click();
+      cy.get("[data-test='expense-description']").its('length').should('be.gte', 5);
+    })
 
   //navigate to expenses page and verify the count of expenses
   it('Visits the Friends page', () => {
-    cy.visit('/friends');
+    cy.get('#friends').click();
     cy.get("[data-test='name']").its('length').should('be.eq', 3);
   })
 

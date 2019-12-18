@@ -22,7 +22,7 @@ export default new Vuex.Store({
         setExpenses(state, payload) {
             state.expenses = payload;
         },
-        addExpense(state, payload){
+        addExpense(state, payload) {
             _.merge(state.expenses, payload);
         }
     },
@@ -51,13 +51,21 @@ export default new Vuex.Store({
         }
     },
 
-    getters:{
-        getNextExpenseId(state){
+    getters: {
+        getNextExpenseId(state) {
             let expenseIds = _.map(state.expenses, "id");
             console.log(expenseIds);
-            let expenseIdNums = _.sortBy(_.map(expenseIds, (n) => Number(n) ));
+            let expenseIdNums = _.sortBy(_.map(expenseIds, (n) => Number(n)));
             console.log(expenseIdNums);
             return expenseIdNums[expenseIdNums.length - 1] + 1;
+        },
+
+        personExists(state) {
+            return function (pid) {
+                let found =_.find(state.friends, friend => {return friend.id == pid});
+                let lcl = found ? true : false;
+                return lcl;
+            }
         }
     }
 })
