@@ -23,7 +23,6 @@ export default new Vuex.Store({
             state.expenses = payload;
         },
         addExpense(state, payload) {
-            console.log('payload:' + payload.id + payload.description + payload.amount);
             _.merge(state.expenses, payload);
         }
     },

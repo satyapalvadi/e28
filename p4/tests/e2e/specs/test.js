@@ -47,11 +47,11 @@ describe('Expenser', () => {
     }
 
     cy.get('#add').click();
-    cy.get('[data-test=expense-description-input]').type(product.description);
-    cy.get('[data-test=expense-amount-input]').type(product.amount);
-    cy.get('[data-test=expense-paidBy-input]').type(product.paidBy);
-    cy.get('[data-test=expense-date-input]').type(product.date);
-    cy.get('[data-test=expense-splitters-input]').type(product.splitters);
+    cy.get('[data-test=expense-description-input]').type(expense.description);
+    cy.get('[data-test=expense-amount-input]').type(expense.amount);
+    cy.get('[data-test=expense-paidBy-input]').type(expense.paidBy);
+    cy.get('[data-test=expense-date-input]').type(expense.date);
+    cy.get('[data-test=expense-splitters-input]').type(expense.splitters);
     cy.get('[data-test=add-expense-button]').click();
     cy.url().should('include', 'home');
 
