@@ -7,9 +7,9 @@ const axios = require("axios");
 
 export default new Vuex.Store({
     state: {
-        personResponsibilities: null,
-        friends: null,
-        expenses: null
+        personResponsibilities: {},
+        friends: {},
+        expenses: {}
     },
 
     mutations: {
@@ -23,13 +23,14 @@ export default new Vuex.Store({
             state.expenses = payload;
         },
         addExpense(state, payload) {
+            console.log('payload:' + payload.id + payload.description + payload.amount);
             _.merge(state.expenses, payload);
         }
     },
 
     actions: {
         //chain the 2 api calls needed for data in the homepage
-        setData(context) {
+        getData(context) {
             axios.get("https://e28-expenser.firebaseio.com/persons.json").then(response => {
                 context.commit('setFriends', response.data);
                 axios.get("https://e28-expenser.firebaseio.com/personResponsibilities.json").then(response => {
@@ -38,13 +39,13 @@ export default new Vuex.Store({
             });
         },
 
-        setFriends(context) {
+        getFriends(context) {
             axios.get("https://e28-expenser.firebaseio.com/persons.json").then(response => {
                 context.commit('setFriends', response.data);
             });
         },
 
-        setExpenses(context) {
+        getExpenses(context) {
             axios.get("https://e28-expenser.firebaseio.com/expenses.json").then(response => {
                 context.commit('setExpenses', response.data);
             });

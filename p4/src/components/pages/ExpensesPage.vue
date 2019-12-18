@@ -22,7 +22,7 @@ export default {
 
   props: [],
   mounted: function() {
-    //this.$store.dispatch("setExpenses");
+    //this.$store.dispatch("getExpenses");
   },
 
 };

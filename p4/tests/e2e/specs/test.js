@@ -37,4 +37,24 @@ describe('Expenser', () => {
   })
 
 
+  it('verify the create expense', () => {
+    let expense = {
+      description:'Movies on 12/25',
+      amount:'200',
+      date: "12/25/2008",
+      paidBy: "p1",
+      splitters: "p1-50,p2-50"
+    }
+
+    cy.get('#add').click();
+    cy.get('[data-test=expense-description-input]').type(product.description);
+    cy.get('[data-test=expense-amount-input]').type(product.amount);
+    cy.get('[data-test=expense-paidBy-input]').type(product.paidBy);
+    cy.get('[data-test=expense-date-input]').type(product.date);
+    cy.get('[data-test=expense-splitters-input]').type(product.splitters);
+    cy.get('[data-test=add-expense-button]').click();
+    cy.url().should('include', 'home');
+
+  })
+
 })

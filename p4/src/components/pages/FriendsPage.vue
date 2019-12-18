@@ -25,7 +25,7 @@ export default {
   props: [],
 
   mounted: function() {
-    //this.$store.dispatch("setFriends");
+    //this.$store.dispatch("getFriends");
   }
 };
 </script>

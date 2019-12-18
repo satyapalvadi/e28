@@ -70,9 +70,9 @@ export default {
 
   mounted: function() {
     //Make all required API call to get data from the homepage
-    this.$store.dispatch("setData");
-    this.$store.dispatch("setExpenses");
-    this.$store.dispatch("setFriends");
+    this.$store.dispatch("getData");
+    this.$store.dispatch("getExpenses");
+    this.$store.dispatch("getFriends");
   },
 
   watch: {
