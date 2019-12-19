@@ -41,7 +41,7 @@ describe('Expenser', () => {
     let expense = {
       description:'Movies on 12/25',
       amount:'200',
-      date: "12/25/2008",
+      date: "2019-12-25",
       paidBy: "p1",
       splitters: "p1-50,p2-50"
     }
@@ -53,7 +53,7 @@ describe('Expenser', () => {
     cy.get('[data-test=expense-date-input]').type(expense.date);
     cy.get('[data-test=expense-splitters-input]').type(expense.splitters);
     cy.get('[data-test=add-expense-button]').click();
-    cy.url().should('include', 'home');
+    cy.get("[data-test='name']").its('length').should('be.eq', 3);
 
   })
 
